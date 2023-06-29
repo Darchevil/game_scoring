@@ -1,0 +1,6 @@
+<label for="numberPlayer"> Combien de joueurs ? (max 7):</label>
+<input type="text" [formControl]="NumberPlayerFormControl" />
+<button mat-fab color="primary" class="small-button">
+  <mat-icon>check_circle</mat-icon>
+</button>
+<p>Nombre de joueurs : {{ NumberPlayerFormControl.value }}</p>

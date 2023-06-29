@@ -1,4 +1,18 @@
-<p>six-qui-prend works!</p>
-
-<h1>Player : {{ player.name }}</h1>
-<h2>Score : {{ player.score }}</h2>
+<!--
+    Mettre un formulaire pour demander :
+    Nombre de joueurs
+    Nom des joueurs,
+    Initialiser score à 0
+    Max score 66
+    Dresser ensuite tableau avec des inputs devant chaque nom et à chaque entrée, le système calcule les scores 
+    
+-->
+<div class="center-text">
+  <h1>6 Qui prend feuille de score</h1>
+</div>
+<div>
+  <app-game-form></app-game-form>
+</div>
+<div>
+  <a mat-raised-button color="primary" (click)="back()">BACK</a>
+</div>
