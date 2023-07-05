@@ -1,6 +1,23 @@
 <label for="numberPlayer"> Combien de joueurs ? (max 7):</label>
-<input type="text" [formControl]="NumberPlayerFormControl" />
+<input
+  type="text"
+  [formControl]="numberPlayerFormControl"
+  (change)="enteredNumber()"
+/>
 <button mat-fab color="primary" class="small-button">
   <mat-icon>check_circle</mat-icon>
 </button>
-<p>Nombre de joueurs : {{ NumberPlayerFormControl.value }}</p>
+<div>
+  <small class="text-danger" *ngIf="numberPlayerFormControl.errors?.['max']">
+    Nombre de joueurs max dépassé
+  </small>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let player of numberPlayers">
+      Entrer un nom de joueur <input type="text" placeholder="Nom" />
+    </li>
+  </ul>
+</div>
+<p>Nombre de joueurs : {{ numberPlayerFormControl.value }}</p>
