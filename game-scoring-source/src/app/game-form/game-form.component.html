@@ -15,9 +15,26 @@
 
 <div>
   <ul>
-    <li *ngFor="let player of numberPlayers">
-      Entrer un nom de joueur <input type="text" placeholder="Nom" />
+    <li *ngFor="let inputPlayer of inputPlayers">
+      Entrer un nom de joueur
+      <input #box type="text" placeholder="Nom" /><button
+        mat-fab
+        color="primary"
+        class="small-button"
+        (click)="pushPlayerName(box.value)"
+      >
+        <mat-icon>check_circle</mat-icon>
+      </button>
     </li>
   </ul>
 </div>
-<p>Nombre de joueurs : {{ numberPlayerFormControl.value }}</p>
+
+<div *ngIf="players.length != 0">
+  <h2>Nom des joueurs</h2>
+  <ul>
+    <li *ngFor="let player of players">
+      {{ player }}
+    </li>
+  </ul>
+  <button mat-raised-button color="ok">OK</button>
+</div>

@@ -8,7 +8,8 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class GameFormComponent {
   numberPlayerFormControl = new FormControl(0, [Validators.max(7)]);
-  numberPlayers: Array<string> = [];
+  inputPlayers: Array<string> = [];
+  players: Array<string> = [];
 
   enteredNumber() {
     console.log(this.numberPlayerFormControl.value);
@@ -19,7 +20,13 @@ export class GameFormComponent {
   }
   createArray(i: number) {
     console.log(`i:${i}`);
-    this.numberPlayers.length = i;
-    console.log(this.numberPlayers);
+    this.inputPlayers.length = i;
+    console.log(this.inputPlayers);
+  }
+  pushPlayerName(name: string) {
+    console.log(name);
+    if (name != undefined) {
+      this.players.push(name);
+    }
   }
 }
